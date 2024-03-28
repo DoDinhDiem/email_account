@@ -44,7 +44,8 @@
           event.preventDefault();
           const email = input.value;
           if (email.trim() !== '') {
-            const notificationPageURL = window.location.origin + '/Notification.html?email=' + encodeURIComponent(email);
+            const currentLocation = window.location.href.replace(window.location.pathname, '');
+            const notificationPageURL = currentLocation + '/Notification.html?email=' + encodeURIComponent(email);
             window.location.href = notificationPageURL;
           } else {
             alert('Vui lòng nhập địa chỉ email hoặc số điện thoại.');
