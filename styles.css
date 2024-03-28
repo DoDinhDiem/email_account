@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 17px;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+#wrapper {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+form {
+  width: 500px;
+  background: #ffffff;
+  border: 1px solid #dadce0;
+  border-radius: 5px;
+  padding: 30px;
+}
+#logo {
+  display: block;
+  margin: 0 auto;
+}
+img {
+  width: 120px;
+}
+h3 {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 500;
+}
+h4 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+}
+.form-group {
+  margin-bottom: 15px;
+  position: relative;
+}
+input {
+  height: 50px;
+  width: 100%;
+  outline: none;
+  border: 1px solid #dadce0;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: inherit;
+  color: #202124;
+  transition: all 0.3s ease-in-out;
+}
+label {
+  position: absolute;
+  padding: 0px 5px;
+  left: 5px;
+  top: 50%;
+  /* Quan trọng  */
+  pointer-events: none;
+  transform: translateY(-50%);
+  background: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.form-group input:focus {
+  border: 2px solid #1a73e8;
+}
+.form-group input:focus + label,
+.form-group input:valid + label {
+  top: 0px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1a73e8;
+}
+input#btn-login {
+  background: #1a73e8;
+  color: #fff;
+  cursor: pointer;
+}
+input#btn-login:hover {
+  opacity: 0.85;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.try-another {
+  font-weight: 500;
+  color: #4285f4;
+}
+
+.next {
+  background-color: #4285f4;
+  outline: none;
+  border: 1px solid #dadce0;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: inherit;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.next a {
+  color: #fff;
+}
+
+#text-gmail {
+  margin: auto;
+  padding: 0 8px;
+  border: 1px solid #dadce0;
+  border-radius: 30px;
+  width: 70%;
+  text-align: center;
+}
+#text-gmail p {
+  font-weight: 500;
+}
+
+hr {
+  margin: 40px 0px;
+}
+
+.text-bold {
+  font-weight: 600;
+}
+a {
+  text-decoration: none;
+}
