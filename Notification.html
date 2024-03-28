@@ -19,10 +19,23 @@
       </div>
       <hr />
       <p class="text-bold">Chào mừng bạn quay lại tài khoản của mình</p>
-      <p>Nếu nghĩ ngờ rằng bạn bị mất quyền truy cập vào tài khoản do các thay đổi mà một người khác thực hiện, thì bạn
+      <p>Nếu nghi ngờ rằng bạn bị mất quyền truy cập vào tài khoản do các thay đổi mà một người khác thực hiện, thì bạn
         nên <a href="#" class="button"> xem lại và bảo vệ tài khoản của mình.</a></p>
     </form>
   </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const email = urlParams.get('email');
+      const textGmail = document.querySelector('#text-gmail p');
+
+      if (textGmail && email) {
+        textGmail.textContent = email;
+      } else {
+        console.error('Không tìm thấy phần tử #text-gmail p hoặc không có email trong URL.');
+      }
+    });
+  </script>
 </body>
 
 </html>
